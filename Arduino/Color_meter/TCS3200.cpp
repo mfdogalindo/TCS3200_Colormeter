@@ -39,7 +39,7 @@ uint16_t TCS3200::read(uint8_t color) {
   uint16_t pulse;
   digitalWrite(_S2, (color & 0x3) > 1);
   digitalWrite(_S3, (color & 0x1));
-  pulse = pulseIn(_OUT, HIGH);
+  pulse = pulseIn(_OUT, HIGH,5000000);
   return pulse;
 }
 
